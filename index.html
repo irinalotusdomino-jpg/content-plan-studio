@@ -197,6 +197,16 @@
   .settings-note{font-size:11.5px;color:var(--muted-2);line-height:1.6;}
   .settings-note a{color:var(--accent);}
 
+  .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:26px;
+    margin-bottom:14px;
+  }
+  .footer-links a.btn{text-decoration:none;}
+
   /* ---------- GRID ---------- */
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
   @media(max-width:760px){.grid{grid-template-columns:1fr;} .slate-body{align-items:flex-start;} .slate-meta{text-align:left;}}
@@ -772,6 +782,7 @@ function render(){
       <button class="btn" data-action="next-week" ${state.genWeekBusy?'disabled':''}>▶ Наступний тиждень</button>
       <button class="btn ghost" data-action="toggle-archive">🗂 Архів (${state.archive.length})</button>
       <button class="btn ghost" data-action="toggle-settings">🔑 Ключ API ${state.apiKey ? '✓' : ''}</button>
+      <a class="btn ghost" href="https://www.instagram.com/new_ai_life?igsh=emFlcHRubjFsZ25m" target="_blank" rel="noopener">📷 Instagram</a>
       <div class="spacer"></div>
       <div class="cache-info">
         <span>кеш: ${state.history.length} ід.</span>
@@ -784,6 +795,11 @@ function render(){
 
     <div class="grid">
       ${state.topics.map((_,i)=>renderCard(i)).join('')}
+    </div>
+
+    <div class="footer-links">
+      <a class="btn" href="https://irynakyrylova.netlify.app/" target="_blank" rel="noopener">📄 Моє резюме</a>
+      <a class="btn" href="https://irinalotusdomino-jpg.github.io/speaking_english/" target="_blank" rel="noopener">🇬🇧 Speaking English</a>
     </div>
 
     <footer>
